@@ -50,15 +50,29 @@ iv) Perform face detection with label in real-time video from webcam.
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-image = cv2.imread('saadhu.jpg')
+image = cv2.imread("litya .jpeg")
+
 if image is None:
-    print("Error: saadhu.jpg not found")
+    print("Image not found")
     exit()
-image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-plt.imshow(image_rgb)
+
+# Extract ROI
+roi = image[50:250, 50:250]
+
+# Convert BGR to RGB
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+roi = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+
+plt.subplot(1, 2, 1)
+plt.imshow(image)
 plt.title("Original Image")
-plt.axis('off')
+plt.axis("off")
+
+plt.subplot(1, 2, 2)
+plt.imshow(roi)
+plt.title("ROI")
+plt.axis("off")
+
 plt.show()
 ```
 ```
@@ -72,7 +86,7 @@ plt.axis('off')
 plt.show()
 ```
 ```
-image = cv2.imread('saadhu.jpg')
+image = cv2.imread('saadhu.jpeg')
 if image is None:
     print("Error: dhoni.jpeg not found")
     exit()
@@ -100,19 +114,27 @@ plt.show()
 # Output
 ## Original image:
 
-<img width="275" height="336" alt="image" src="https://github.com/user-attachments/assets/81e065bf-2419-4d36-ad2d-a943889b1b34" />
+
+<img width="557" height="270" alt="Screenshot 2026-09-09 185045" src="https://github.com/user-attachments/assets/f6dc8e7f-e1b0-4ee5-8466-4a4b6e26b612" />
+
 
 ## Segmented ROI:
 
-<img width="316" height="342" alt="image" src="https://github.com/user-attachments/assets/c2db06c9-b485-4d55-ad0a-d9f61e5e45a3" />
+
+<img width="405" height="344" alt="Screenshot 2026-09-09 185108" src="https://github.com/user-attachments/assets/63262afe-2624-4033-918a-8c6164c3e5e7" />
+
 
 ## Canny Edge Detection:
 
-<img width="289" height="338" alt="image" src="https://github.com/user-attachments/assets/97f0480b-5446-41b9-8d5f-c00af362e653" />
+
+<img width="412" height="344" alt="Screenshot 2026-09-09 185121" src="https://github.com/user-attachments/assets/090ea778-18cf-47cc-a2d3-47a0ca4c42e3" />
+
 
 ## CONTOUR DETECTION:
 
-<img width="272" height="338" alt="image" src="https://github.com/user-attachments/assets/7f6ce150-72a5-4fde-81b8-5b19f5343c07" />
+
+<img width="443" height="345" alt="image" src="https://github.com/user-attachments/assets/5227e4b6-73b7-4a8a-b2cd-37790e384693" />
+
 
 # Result
 Thus to write a Python program using OpenCV to perform the following image manipulations was verified successfully.
